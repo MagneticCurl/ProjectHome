@@ -2049,19 +2049,20 @@ input, select, textarea {
 			color: inherit;
 
 		}
-    .thumbnails article .image {
-    width: 100% !important;
+    #main .thumb .image {
+    background: none !important;
+    background-image: none !important;
+    position: relative !important;
     overflow: hidden !important;
+}
+
+/* Make IMG behave normally and scale properly */
+#main .thumb .image img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;  /* change to 'cover' if you want full crop */
     position: relative !important;
 }
 
-.thumbnails article .image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important; /* Change to 'contain' if you want NO cropping */
-    object-position: center !important;
-    display: block !important;
-    position: absolute !important;
-    top: 0; left: 0;
-}
 
