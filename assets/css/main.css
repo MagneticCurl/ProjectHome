@@ -2047,4 +2047,10 @@ input, select, textarea {
 
 		#footer .copyright a {
 			color: inherit;
+
 		}
+.thumbnails article .image img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+}
