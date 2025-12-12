@@ -2100,7 +2100,7 @@ input, select, textarea {
     align-items: center;
     overflow: hidden;
     background: #111;
-    border-radius: 6px;
+    border-radius: 0px;
 }
 
 #main article.thumb .image img {
@@ -2109,6 +2109,7 @@ input, select, textarea {
     object-fit: contain; 
     object-position: center;
 }
+
 
 
 
