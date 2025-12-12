@@ -2050,6 +2050,25 @@ input, select, textarea {
 
 		}
    
+	.thumb {
+    width: 100%;
+    overflow: hidden;
+}
+
+.thumb .image {
+    display: block;
+    width: 100%;
+    height: 200px; /* Set your thumbnail height */
+    background: #000;
+}
+
+.thumb .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* ❗ PERFECT FIT INSIDE */
+    object-position: center; /* center the image */
+    display: block;
+}
 
 
 
