@@ -2126,33 +2126,29 @@ input, select, textarea {
     object-position: center;   /* keep the crop centered */
     display: block;
 }
-/* ---------- UNIFORM THUMBNAILS + IMAGE ZOOMED OUT ---------- */
-
-#main article.thumb {
-    margin: 0 0 2rem 0 !important;
-    padding: 0 !important;
-}
-
-/* Fixed thumbnail box size */
+/* FIXED SIZE THUMBNAIL BOX */
 #main article.thumb .image {
-    width: 100% !important;
-    height: 220px !important;  /* <<< thumbnail height */
-    overflow: hidden !important;
-    background: #000 !important;
-    border-radius: 0 !important; /* straight corners */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    width: 100%;
+    height: 220px;        /* fixed thumbnail height */
+    background: #000;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 0;     /* straight corners */
 }
 
-/* Image zoomed out, fully visible, centered */
+/* IMAGE SHOULD BE AS LARGE AS POSSIBLE WITHOUT CROPPING */
 #main article.thumb .image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;   /* <<< ZOOMED OUT + NO CROPPING */
-    object-position: center !important;
-    display: block !important;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;  /* full image visible */
+    object-position: center;
+    display: block;
 }
+
 
 
 
