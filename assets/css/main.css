@@ -2049,64 +2049,45 @@ input, select, textarea {
 			color: inherit;
 
 		}
-   /* ===== Multiverse: Center & Fit thumbnails (NO CROP) ===== */
+   /* ===== FIXED THUMBNAIL HEIGHT WITH PERFECT FIT IMAGES ===== */
 
-/* Remove the template "padding hack" that creates a fake box */
+/* Restore clean box, remove template hack */
 #main .thumb:before {
     display: none !important;
-    content: none !important;
 }
 
-/* Make the thumb container behave normally (keep original column widths) */
-#main article.thumb {
-    display: block !important;
-    height: auto !important;
-    padding: 0 !important;
-    margin: 0 0 2rem 0 !important;
-}
-
-/* Make the clickable box a real box and center its contents */
-#main .thumb > .image {
-    position: relative !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+/* Thumbnails: consistent height (adjust if needed) */
+#main article.thumb .image {
     width: 100% !important;
-    /* default thumbnail height — tweak below if you want a different size */
-    height: 28vh !important;
-    min-height: 160px !important;   /* prevents extremely small boxes */
-    max-height: 420px !important;   /* prevents very tall boxes */
+    height: 240px !important;  /* <<< ADJUST THIS FOR THUMBNAIL SIZE */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     overflow: hidden !important;
-    background: #000 !important;     /* letterbox background if aspect differs */
-    background-size: cover !important;
-    background-position: center center !important;
+    background: #111 !important;
+    border-radius: 6px;
 }
 
-/* Ensure images and videos are centered and fully visible (no crop) */
-#main .thumb > .image img,
-#main .thumb > .image video {
+/* Fit image inside without cropping */
+#main article.thumb .image img,
+#main article.thumb .image video {
     max-width: 100% !important;
     max-height: 100% !important;
-    width: auto !important;
-    height: auto !important;
     object-fit: contain !important;
     object-position: center center !important;
     display: block !important;
-    position: static !important;
 }
 
-/* Smaller screens: reduce thumbnail height so layout stays tidy */
-@media screen and (max-width: 980px) {
-    #main .thumb > .image {
-        height: 22vh !important;
-        min-height: 140px !important;
+/* Optional: Adjust for smaller screens */
+@media (max-width: 980px) {
+    #main article.thumb .image {
+        height: 200px !important;
     }
 }
 
-@media screen and (max-width: 480px) {
-    #main .thumb > .image {
-        height: 30vh !important; /* mobile taller thumbnails for visibility */
-        min-height: 180px !important;
+@media (max-width: 736px) {
+    #main article.thumb .image {
+        height: 180px !important;
     }
 }
 
