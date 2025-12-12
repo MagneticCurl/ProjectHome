@@ -2109,6 +2109,23 @@ input, select, textarea {
     object-fit: contain; 
     object-position: center;
 }
+/* === Fill Thumbnail Fully (Crop to Fit) === */
+
+#main article.thumb .image {
+    width: 100%;
+    aspect-ratio: 16/9;   /* thumbnail shape — change if needed */
+    overflow: hidden;
+    background: #000;
+    border-radius: 0;   /* straight corners */
+}
+
+#main article.thumb .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* <<< FULL FIT — NO EMPTY SPACE */
+    object-position: center;   /* keep the crop centered */
+    display: block;
+}
 
 
 
